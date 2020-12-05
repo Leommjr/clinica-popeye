@@ -1,119 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Clínica Popeye</title>
-    <style></style>
-  </head>
-  <body>
-    <header class="bg-light">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Clínica Popeye</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./galeria">Galeria</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./novo-endereco">Novo Endereço</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./agendamento">Agendamento</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./login">Login</a>
-              </li>
-            </ul>
-          </div>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous" />
+  <link href="./css/home.css" rel="stylesheet" />
+
+  <title>Clínica Popeye</title>
+  <style></style>
+</head>
+
+<body>
+  <header class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Clínica Popeye</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./galeria">Galeria</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./novo-endereco">Novo Endereço</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./agendamento">Agendamento</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login">Login</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <div class="container mt-2">
-      <main>
-        <section>
-          <h1>Clínica Popeye</h1>
-          <p>
-            A clínica Popeye esta a mais de 7 anos no mercado, sendo vencedora
-            do prêmio de melhor clínica nos anos de 2017, 2018 e 2020 pela
-            associação das clínicas.
-          </p>
-          <p>
-            A Clínica conta com equipamentos de última geração e atende as
-            seguintes especialidades:
-          </p>
-          <ul>
-            <li>Cardiologia</li>
-            <li>Dermatologia</li>
-            <li>Endrocrinologia</li>
-            <li>Ginecologia e Obstetrícia</li>
-            <li>Neurologia</li>
-            <li>Oncologia</li>
-            <li>Ortopedia e Traumatologia</li>
-            <li>Oftalmologia</li>
-            <li>Pediatria</li>
-            <li>Urologia</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Nossa missão</h2>
-          <p>
-            Nossa missão é proporcionar um atendimento rápido, eficiente e
-            humanizado para o bem estar de nosso cliente.
-          </p>
-        </section>
-
-        <section>
-          <h2>Valores</h2>
-          <ul>
-            <li>Compromisso com o cliente</li>
-            <li>Qualidade de serviços</li>
-            <li>Respeito e valorização do ser humano</li>
-            <li>Responsabilidade social</li>
-            <li>Transparência</li>
-          </ul>
-        </section>
-        <section class="">
-          <figure class="figure row justify-center">
-            <img
-              src="./images/clinica-medica-recepcao.jpeg"
-              class="figure-img img-fluid rounded"
-              alt="Recepção clínica"
-            />
-            <figcaption class="figure-caption">Recepção clínica.</figcaption>
-          </figure>
-          <!-- <img class="img-fluid" src="./image/clinica-medica-recepcao.jpeg" alt="Recepção clínica" > -->
-        </section>
-      </main>
+  <main>
+    <section class="container">
+      <h1 class="text-center my-3">Clínica Popeye</h1>
+      <p>
+        A clínica Popeye esta a mais de 7 anos no mercado, sendo vencedora
+        do prêmio de melhor clínica nos anos de 2017, 2018 e 2020 pela
+        associação das clínicas.
+      </p>
+      <p>
+        A Clínica conta com equipamentos de última geração e atende as
+        seguintes especialidades:
+      </p>
+      <ul class="lista-especialidades">
+        <li>Cardiologia</li>
+        <li>Dermatologia</li>
+        <li>Endrocrinologia</li>
+        <li>Ginecologia</li>
+        <li>Neurologia</li>
+        <li>Oncologia</li>
+        <li>Ortopedia</li>
+        <li>Oftalmologia</li>
+        <li>Pediatria</li>
+        <li>Urologia</li>
+      </ul>
+    </section>
+    <div class="container-title">
+      <h2>Nossa missão</h2>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <section class="container my-2">
+      <p>
+        Nossa missão é proporcionar um atendimento rápido, eficiente e
+        humanizado para o bem estar de nosso cliente.
+      </p>
+    </section>
+    <div class="container-title">
+      <h2>Valores</h2>
+    </div>
+    <section class="container my-2">
+      <ul>
+        <li>Compromisso com o cliente</li>
+        <li>Qualidade de serviços</li>
+        <li>Respeito e valorização do ser humano</li>
+        <li>Responsabilidade social</li>
+        <li>Transparência</li>
+      </ul>
+    </section>
+
+    <section class="container">
+      <figure class="figure row justify-center">
+        <img src="./images/clinica-medica-recepcao.jpeg" class="figure-img img-fluid rounded" alt="Recepção clínica" />
+        <figcaption class="figure-caption">Recepção clínica.</figcaption>
+      </figure>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
