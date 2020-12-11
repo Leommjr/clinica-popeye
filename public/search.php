@@ -10,7 +10,7 @@
     <title>Search</title>
 </head>
 <body>
-    <div class="container">
+    <div>
         <main>
             <?php
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -30,7 +30,7 @@
                         $stmt = $data->getData($nome); //$data = statement | Query feita usando o nome informado
                         include 'ShowData.php';
                         $view = new ShowData($stmt);
-                        echo $view->showTable(); // imprime a tabela dinamica
+                        $view->showTable($tipo); // imprime a tabela dinamica
                     }
                     catch (Exception $e){
                         exit('Ocorreu uma falha: ' . $e->getMessage());
