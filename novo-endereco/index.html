@@ -45,27 +45,29 @@
 
   <div class="container">
     <main>
-      <form class="row g-2 my-2">
+      <form name="endereco" method="POST" class="row g-2 my-2">
         <h1>Cadastro de Endereços</h1>
         <div class="col-md-2 form-floating">
-          <input required name="inputCEP" type="text" placeholder="#####-##" class="form-control" id="inputCEP" />
-          <label class="form-label" for="inputCEP">CEP</label>
+          <input required name="cep" type="text" placeholder="#####-##" class="form-control" id="cep" maxlength="10" />
+          <label class="form-label" for="cep">CEP</label>
         </div>
         <div class="col-md-10 form-floating">
-          <input required name="inputLogradouro" type="text" placeholder="Avenida João Naves de Ávila" class="form-control"
-            id="inputLogradouro" />
-          <label class="form-label" for="inputLogradouro">Logradouro</label>
+          <input required name="logradouro" type="text" placeholder="Avenida João Naves de Ávila" class="form-control"
+            id="logradouro" maxlength="50" />
+          <label class="form-label" for="logradouro">Logradouro</label>
         </div>
         <div class="col-md-12 form-floating">
-          <input required name="inputBairro" type="text" placeholder="Santa Mônica" class="form-control" id="inputBairro" />
-          <label class="form-label" for="inputBairro">Bairro</label>
+          <input required name="bairro" type="text" placeholder="Santa Mônica" class="form-control" id="bairro"
+            maxlength="50" />
+          <label class="form-label" for="bairro">Bairro</label>
         </div>
         <div class="col-md-12 form-floating">
-          <input required name="inputCidade" type="text" placeholder="Uberlândia" class="form-control" id="inputCidade" />
-          <label class="form-label" for="inputCidade">Cidade</label>
+          <input required name="cidade" type="text" placeholder="Uberlândia" class="form-control" id="cidade"
+            maxlength="50" />
+          <label class="form-label" for="cidade">Cidade</label>
         </div>
         <div class="col-md-12 form-floating">
-          <select required name="inputEstado" class="form-select" id="inputEstado">
+          <select required name="estado" class="form-select" id="estado">
             <option selected>Selecione</option>
             <option value="AC">Acre</option>
             <option value="AL">Alagoas</option>
@@ -95,17 +97,24 @@
             <option value="SE">Sergipe</option>
             <option value="TO">Tocantis</option>
           </select>
-          <label class="form-label" for="inputEstado">Estado</label>
+          <label class="form-label" for="estado">Estado</label>
         </div>
         <div class="col-12 mt-3">
           <button type="submit" class="btn btn-primary">
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-            </svg>
             Cadastrar Endereço
           </button>
+        </div>
+
+        <div class="mt-2">
+          <div style="display: none;" id="alertSuccessMsg" class="alert alert-success alert-dismissible" role="alert">
+            <strong>Um novo endereço foi cadastrado!</strong>
+            <button type="button" class="btn-close" onclick="closeSuccessAlert()"></button>
+          </div>
+
+          <div style="display: none;" id="alertErrorMsg" class="alert alert-danger alert-dismissible" role="alert">
+            <span></span>
+            <button type="button" class="btn-close" onclick="closeErrorAlert()"></button>
+          </div>
         </div>
       </form>
     </main>
@@ -113,6 +122,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy"
     crossorigin="anonymous"></script>
+  <script src="./cadastra-endereco.js"></script>
 </body>
 
 </html>

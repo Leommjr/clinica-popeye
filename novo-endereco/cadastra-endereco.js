@@ -1,17 +1,14 @@
 window.onload = function () {
-  const loginForm = document.querySelector("form[name=login]");
-  loginForm.addEventListener("submit", (e) => {
+  const form = document.querySelector("form[name=endereco]");
+  console.log(form)
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    verificaCredenciais(loginForm)
+    cadastraEndereco(form);
   })
 }
 
-function verificaCredenciais(form) {
-  if (!form.email.value || !form.senha.value) {
-    return;
-  }
-
-  const url = 'login.php';
+function cadastraEndereco(form) {
+  const url = 'cadastra-endereco.php';
   const body = new FormData(form);
 
   const options = {
@@ -31,7 +28,7 @@ function verificaCredenciais(form) {
     .then(responsePhp => {
       if (responsePhp.success) {
         form.reset();
-        // TODO: Redirecionar para a area privada do sistema.
+        document.querySelector("#alertSuccessMsg").style.display = 'block';
       }
       else {
         showErrorMessage(responsePhp.message);
@@ -51,6 +48,10 @@ function showErrorMessage(messageUser, messageConsole) {
   }
 }
 
-function closeAlert() {
+function closeErrorAlert() {
   document.querySelector("#alertErrorMsg").style.display = 'none';
+}
+
+function closeSuccessAlert() {
+  document.querySelector("#alertSuccessMsg").style.display = 'none';
 }
