@@ -1,6 +1,5 @@
 window.onload = function () {
   const form = document.querySelector("form[name=endereco]");
-  console.log(form)
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     cadastraEndereco(form);
@@ -31,7 +30,7 @@ function cadastraEndereco(form) {
         document.querySelector("#alertSuccessMsg").style.display = 'block';
       }
       else {
-        showErrorMessage(responsePhp.message);
+        showErrorMessage('Ocorreu uma falha inesperada - tecle F12 e veja a janela console', responsePhp.message);
       }
     })
     .catch(error => {
