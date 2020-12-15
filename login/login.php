@@ -3,7 +3,7 @@
 require "../config.php";
 require "../RequestResponse.php";
 
-$pdo = mysqlConnect();
+$pdo = connect();
 
 $email = $senha = "";
 if (isset($_POST['email']))
@@ -28,7 +28,7 @@ try {
     echo json_encode($response);
   }
   else {
-    if (!password_verify($senha, $row['hash_senha'])) {
+    if (!password_verify($senha, $row['senha_hash'])) {
       $response = new RequestResponse(false, "Senha inválida");
       echo json_encode($response);
     } else {

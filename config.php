@@ -1,6 +1,6 @@
 <?php
 
-function mysqlConnect()
+function connect()
 {
   $db_host = "fdb30.awardspace.net";
   $db_username = "3632228_exbd";
