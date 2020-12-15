@@ -28,6 +28,11 @@
                     
                     try{
                         $stmt = $data->getData($nome); //$data = statement | Query feita usando o nome informado
+                        if($stmt === "None"){
+                            echo "Tipo Inválido";
+                            die();
+                        }
+                        
                         include 'ShowData.php';
                         $view = new ShowData($stmt);
                         $view->showTable($tipo); // imprime a tabela dinamica
@@ -40,26 +45,46 @@
                 else {
                     $query = "Funcionario";
                     if(isset($_GET["query"])) //O tipo de busca será definido pela query string. (ex: /search.php?query=Paciente)
+                    //Funcionario, Medico, Paciente, Endereco, Agenda
                         $query = $_GET["query"];
                     $self = htmlspecialchars($_SERVER["PHP_SELF"]);
                     $query = htmlspecialchars($query);
                     echo "<h1> Buscar $query: </h1>";
                     echo "<br>";
-                    echo <<<FORM
-                    <form action="$self" method="post" >
-                        <div class="row g-1" >
-                            <div class="col sm-10" >
-                                <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite o nome do $query" >
-                                <input type="text" name="tipo" value="$query" hidden >
+                    if($query === 'Endereco' or $query === 'Agenda'){
+                        echo <<<FORM
+                        <form action="$self" method="post" >
+                            <div class="row g-1" >
+                                <div class="col sm-10" >
+                                    <input type="text" name="nome" id="nome" value="*" class="form-control" placeholder="Todo(a)s o(a)s {$query}s" >
+                                    <input type="text" name="tipo" value="$query" hidden >
+                                </div>
+                                <div class="col sm-2">
+                                    <button type="submit" class="btn btn-success btn-sm ">
+                                        <svg class="bi bi-chevron-right" width="20" height="28" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>Buscar
+                                    </button>
+                                </div>
                             </div>
-                            <div class="col sm-2">
-                                <button type="submit" class="btn btn-success btn-sm ">
-                                    <svg class="bi bi-chevron-right" width="20" height="28" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>Buscar
-                                </button>
+                        </form>
+                        FORM;
+                    }
+                    else{
+                        echo <<<FORM
+                        <form action="$self" method="post" >
+                            <div class="row g-1" >
+                                <div class="col sm-10" >
+                                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite o nome do $query -- * para listar todos" >
+                                    <input type="text" name="tipo" value="$query" hidden >
+                                </div>
+                                <div class="col sm-2">
+                                    <button type="submit" class="btn btn-success btn-sm ">
+                                        <svg class="bi bi-chevron-right" width="20" height="28" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>Buscar
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                    FORM;
+                        </form>
+                        FORM;
+                    }
 
                     }
                 ?>

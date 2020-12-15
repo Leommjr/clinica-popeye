@@ -1,29 +1,25 @@
 <?php
+	function connect(){
+		$db_host = "fdb30.awardspace.net";
+		$db_user = "3633458_popeye";
+		$db_name = "3633458_popeye";
+		$db_password = "B1gPopey3!@#";
 
-function connect()
-{
-  $db_host = "fdb30.awardspace.net";
-  $db_username = "3632228_exbd";
-  $db_password = "@ExBD123456";
-  $db_name = "3632228_exbd";
+		$dsn = "mysql:host=$db_host;dbname=$db_name;charset=utf8mb4";
 
-  // dsn é apenas um acrônimo de database source name
-  $dsn = "mysql:host=$db_host;dbname=$db_name;charset=utf8mb4";
+		$options = [
+			PDO::ATTR_EMULATE_PREPARES   => false,
+			PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+		];
 
-  $options = [
-    PDO::ATTR_EMULATE_PREPARES => false, // desativa a execução emulada de prepared statements
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // ativa o modo de erros para lançar exceções    
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // altera o modo padrão do método fetch para FETCH_ASSOC
-  ];
 
-  try {
-    $pdo = new PDO($dsn, $db_username, $db_password, $options);
-    return $pdo;
-  } 
-  catch (Exception $e) {
-    //error_log($e->getMessage(), 3, 'log.php');
-    exit('Ocorreu uma falha na conexão com o BD: ' . $e->getMessage());
-  }
-}
-
+		try {
+			$pdo = new PDO($dsn, $db_user, $db_password, $options);
+			return $pdo;
+		}
+		catch (Exception $e) {
+			exit('Falha na conexão com o MySql: '. $e->getMessage());
+		}
+	}
 ?>
