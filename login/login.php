@@ -3,7 +3,7 @@
 require "../config.php";
 require "../RequestResponse.php";
 
-$pdo = mysqlConnect();
+$pdo = connect();
 
 $email = $senha = "";
 if (isset($_POST['email']))
