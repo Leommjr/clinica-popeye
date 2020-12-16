@@ -23,10 +23,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Cadastro Funcionário</a>
+              <a class="nav-link" href="../cadastro-funcionario">Cadastro Funcionário</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../cadastro-paciente">Cadastro Paciente</a>
+              <a class="nav-link active" href="#">Cadastro Paciente</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../lista-funcionarios">Listagem de funcionários</a>
@@ -54,10 +54,10 @@
 
   <div class="container">
     <main>
-      <form name="funcionario" method="POST" class="row g-2 my-2">
-        <h1>Cadastro de Funcionários</h1>
+      <form name="paciente" method="POST" class="row g-2 my-2">
+        <h1>Cadastro de Pacientes</h1>
         <div class="col-md-4 form-floating">
-          <input required name="nome" type="text" placeholder="Digite o nome do funcionario" class="form-control"
+          <input required name="nome" type="text" placeholder="Digite o nome do paciente" class="form-control"
             id="nome" maxlength="50" />
           <label class="form-label" for="nome">Nome</label>
         </div>
@@ -124,49 +124,28 @@
           <label class="form-label" for="estado">Estado</label>
         </div>
         <div class="col-md-6 form-floating">
-          <input required name="data_contrato" type="date" placeholder="##/##/####" class="form-control"
-            id="data_contrato" />
-          <label class="form-label" for="data_contrato">Data de início do contrato</label>
+          <input required name="peso" type="number" placeholder="## Kg" class="form-control"
+            id="peso" min="0" />
+          <label class="form-label" for="peso">Peso</label>
         </div>
         <div class="col-md-6 form-floating">
-          <input required name="salario" type="text" placeholder="####.##" class="form-control" id="salario" />
-          <label class="form-label" for="salario">Salário R$</label>
+          <input required name="altura" type="number" placeholder="180 cm" class="form-control" id="altura" min="0" />
+          <label class="form-label" for="altura">Altura (cm)</label>
         </div>
         <div class="col-md-6 form-floating">
-          <input required name="senha" type="password" placeholder="********" class="form-control" id="senha" />
-          <label class="form-label" for="senha">Senha</label>
+          <input required name="tipo_sanguineo" type="text" placeholder="O +" class="form-control" id="tipo_sanguineo" maxlength="3" />
+          <label class="form-label" for="tipo_sanguineo">Tipo Sanguineo</label>
         </div>
-
-        <div class="col-md-12 form-check">
-          <input class="form-check-input" name="medico" type="checkbox" value="true" id="medico" onchange="toggleCamposMedico()">
-          <label class="form-check-label" for="medico">
-            O funcionário é um médico?
-          </label>
-        </div>
-
-        <div class="row g-2 container-medico" style="display: none;">
-          <div class="col-md-6 form-floating">
-            <input name="especialidade" type="text" placeholder="Informe a especialidade" class="form-control"
-              id="especialidade" maxlength="30" />
-            <label class="form-label" for="especialidade">Especialidade</label>
-          </div>
-          <div class="col-md-6 form-floating">
-            <input name="crm" type="text" placeholder="********" class="form-control" id="crm"
-              maxlength="30" />
-            <label class="form-label" for="crm">CRM</label>
-          </div>
-        </div>
-
 
         <div class="col-12 mt-3">
           <button type="submit" class="btn btn-primary">
-            Cadastrar Funcionário
+            Cadastrar Paciente
           </button>
         </div>
 
         <div class="mt-2">
           <div style="display: none;" id="alertSuccessMsg" class="alert alert-success alert-dismissible" role="alert">
-            <strong>Um novo funcionário foi cadastrado!</strong>
+            <strong>Um novo paciente foi cadastrado!</strong>
             <button type="button" class="btn-close" onclick="closeSuccessAlert()"></button>
           </div>
 
@@ -181,7 +160,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy"
     crossorigin="anonymous"></script>
-  <script src="./cadastra-funcionario.js"></script>
+  <script src="./cadastra-paciente.js"></script>
 </body>
 
 </html>
