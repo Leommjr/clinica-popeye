@@ -54,7 +54,7 @@
 
     <div class="container">
       <main>
-        <form class="row g-2 my-2">
+        <form class="row g-2 my-2" name="agenda" action="agenda.php" method="post">
           <h1>Agendamento de consultas</h1>
           <div class="col-md-6 form-floating">
             <select required name="especialidade" class="form-select" id="especialidade">
@@ -77,16 +77,16 @@
           <div class="col-md-6 form-floating">
             <select required name="horario" class="form-select" id="horario">
               <option selected>Selecione</option>
-              <option value="8">08:00</option>
-              <option value="9">09:00</option>
-              <option value="10">10:00</option>
-              <option value="11">11:00</option>
-              <option value="12">12:00</option>
-              <option value="13">13:00</option>
-              <option value="14">14:00</option>
-              <option value="15">15:00</option>
-              <option value="16">16:00</option>
-              <option value="17">17:00</option>
+              <option value="080000">08:00:00</option>
+              <option value="090000">09:00:00</option>
+              <option value="100000">10:00:00</option>
+              <option value="110000">11:00:00</option>
+              <option value="120000">12:00:00</option>
+              <option value="130000">13:00:00</option>
+              <option value="140000">14:00:00</option>
+              <option value="150000">15:00:00</option>
+              <option value="160000">16:00:00</option>
+              <option value="170000">17:00:00</option>
               <!-- Buscar medicos no banco de acordo com a especialidade selecionada -->
             </select>
             <label class="form-label" for="horario">Hora da consulta</label>
@@ -108,6 +108,17 @@
               Agendar Consulta
             </button>
           </div>
+          <div class="mt-2">
+          <div style="display: none;" id="alertSuccessMsg" class="alert alert-success alert-dismissible" role="alert">
+            <strong>Consulta cadastrada!</strong>
+            <button type="button" class="btn-close" onclick="closeSuccessAlert()"></button>
+          </div>
+
+          <div style="display: none;" id="alertErrorMsg" class="alert alert-danger alert-dismissible" role="alert">
+            <span></span>
+            <button type="button" class="btn-close" onclick="closeErrorAlert()"></button>
+          </div>
+        </div>
         </form>
       </main>
     </div>
@@ -116,5 +127,6 @@
       integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy"
       crossorigin="anonymous"
     ></script>
+    <script src="./cadastra-agenda.js" > </script>
   </body>
 </html>
