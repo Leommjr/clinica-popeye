@@ -1,3 +1,10 @@
+<?php
+
+if(isset($_COOKIE['logged'])){
+    header("Location:../dashboard.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 

@@ -92,7 +92,12 @@ class ExtractData
             $sql .= ' WHERE nome LIKE :nome';
         return $sql;
     }
-
+    private function useMeus(string $nome)
+    {
+        $sql = "SELECT data_agendamento, horario, agenda.nome, agenda.email, agenda.telefone, pessoa.nome as nome_medico
+FROM agenda INNER JOIN pessoa ON agenda.codigo_medico = pessoa.codigo WHERE pessoa.nome LIKE :nome";
+        return $sql; 
+    }
     public function __construct(PDO $db, string $tipo)
     {
         $this->db = $db;
@@ -118,6 +123,9 @@ class ExtractData
                 break;
             case 'Agenda':
                 $sql = $this->useAgenda();
+                break;
+            case 'Meus':
+                $sql = $this->useMeus($nome);
                 break;
             default:
                 return "None";

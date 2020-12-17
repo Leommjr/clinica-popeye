@@ -1,3 +1,8 @@
+<?php
+if(!isset($_COOKIE['logged'])){
+    header("Location:../login/");
+   }
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -23,28 +28,34 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Cadastro Funcionário</a>
+              <a class="nav-link active" href="#">Cadastra Funcionário</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../cadastro-paciente">Cadastro Paciente</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../lista-funcionarios">Listagem de funcionários</a>
+              <a class="nav-link" href="../search.php?query=Funcionario">Listagem de funcionários</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../lista-pacientes">Listagem de pacientes</a>
+              <a class="nav-link" href="../search.php?query=Paciente">Listagem de pacientes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../lista-enderecos">Listagem de endereços</a>
+              <a class="nav-link" href="../search.php?query=Endereco">Listagem de endereços</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../lista-agendamentos">Listagem de agendamentos</a>
+              <a class="nav-link" href="../search.php?query=Agenda">Listagem de agendamentos</a>
             </li>
+            <?php
+              if(isset($_COOKIE['medico'])){
+                        echo<<<HTML
+                        <li class="nav-item">
+                                <a class="nav-link" href="search.php?query=Meus">Meus agendamentos</a>
+                        </li>
+                        HTML;
+                }
+            ?>
             <li class="nav-item">
-              <a class="nav-link" href="../meus-agendamentos">Meus agendamentos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html">Sair</a>
+              <a class="nav-link" href="../logout.php">Sair</a>
             </li>
           </ul>
         </div>

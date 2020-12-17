@@ -24,7 +24,10 @@ function insereEspecialidades(){
   xmlhttp.open("GET",uri,true);
   xmlhttp.onload=function(){
   if(xmlhttp.status==200){
-     var arrayEspecialidades = JSON.parse(this.responseText);
+     var arrayEspecialidade = JSON.parse(this.responseText);
+     var arrayEspecialidades = arrayEspecialidade.filter(function(elem, pos, self) {
+       return self.indexOf(elem) == pos;
+     });
      var select = document.getElementById("especialidade");
      for(var i = 0; i < arrayEspecialidades.length; i++){
         var option = document.createElement("option");
