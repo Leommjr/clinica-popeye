@@ -49,7 +49,7 @@ if(!isset($_COOKIE['logged'])){
               if(isset($_COOKIE['medico'])){
                         echo<<<HTML
                         <li class="nav-item">
-                                <a class="nav-link" href="search.php?query=Meus">Meus agendamentos</a>
+                                <a class="nav-link" href="../search.php?query=Meus">Meus agendamentos</a>
                         </li>
                         HTML;
                 }
