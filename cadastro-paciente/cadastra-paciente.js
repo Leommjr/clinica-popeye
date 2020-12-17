@@ -34,7 +34,7 @@ function buscaEndereco(cep) {
 }
 
 function cadastroPaciente(form) {
-  const url = "cadastra-funcionario.php";
+  const url = "cadastra-paciente.php";
   const body = new FormData(form);
 
   const options = {
