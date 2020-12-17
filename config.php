@@ -1,9 +1,9 @@
 <?php
 	function connect(){
 		$db_host = "fdb30.awardspace.net";
-		$db_user = "3633458_popeye";
-		$db_name = "3633458_popeye";
-		$db_password = "B1gPopey3!@#";
+		$db_user = "3632228_exbd";
+		$db_name = "3632228_exbd";
+		$db_password = "@ExBD123456";
 
 		$dsn = "mysql:host=$db_host;dbname=$db_name;charset=utf8mb4";
 
