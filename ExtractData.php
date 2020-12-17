@@ -1,12 +1,11 @@
 <?php
-declare(strict_types=1);
 
 class ExtractData
 {
     protected $db;
     protected $tipo;
 
-    private function executeQuery(string $sql, string $nome) // Prepara a query recebida e executa
+    private function executeQuery($sql, $nome) // Prepara a query recebida e executa
     {
         try
         {
@@ -67,7 +66,7 @@ class ExtractData
         return $sql;
 
     }
-    private function useFuncionario(string $nome)
+    private function useFuncionario($nome)
     {
         $sql = $this->createQueryFuncionario();
         $sql .= ' FROM pessoa INNER JOIN funcionario ON pessoa.codigo = funcionario.codigo';
@@ -75,7 +74,7 @@ class ExtractData
             $sql .= ' WHERE nome LIKE :nome';
         return $sql;
     }
-    private function usePaciente(string $nome)
+    private function usePaciente($nome)
     {
         $sql = $this->createQueryPaciente();
         $sql .= ' FROM pessoa INNER JOIN paciente ON pessoa.codigo = paciente.codigo';
@@ -83,7 +82,7 @@ class ExtractData
             $sql .= ' WHERE nome LIKE :nome';
         return $sql;
     }
-    private function useMedico(string $nome)
+    private function useMedico($nome)
     {
         $sql = $this->createQueryMedico();
         $sql .= ' FROM pessoa INNER JOIN funcionario ON pessoa.codigo = funcionario.codigo
@@ -98,13 +97,13 @@ class ExtractData
 FROM agenda INNER JOIN pessoa ON agenda.codigo_medico = pessoa.codigo WHERE pessoa.nome LIKE :nome";
         return $sql; 
     }
-    public function __construct(PDO $db, string $tipo)
+    public function __construct($db, $tipo)
     {
         $this->db = $db;
         $this->tipo = $tipo;
     }
 
-    public function getData(string $nome)
+    public function getData($nome)
     {
 
         $sql = "";

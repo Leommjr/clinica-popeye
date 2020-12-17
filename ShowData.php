@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 class ShowData
 {
@@ -52,7 +51,7 @@ class ShowData
         $this->stmt = $stmt;
     }
 
-    public function showTable(string $tipo)
+    public function showTable($tipo)
     {
         $i = 0;
         echo "<div class=\"table-responsive\">";
